@@ -16,6 +16,9 @@ public class ManagerController {
 	@Autowired
 	private ManagerServiceImpl managerServiceImpl;
 	
+	/*
+	 * API to save Manager
+	 */
 	@PostMapping("/save")
 	public Manager saveManager(@RequestBody Manager manager) 
 	{

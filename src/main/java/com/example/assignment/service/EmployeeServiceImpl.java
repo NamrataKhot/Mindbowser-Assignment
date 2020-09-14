@@ -18,6 +18,9 @@ public class EmployeeServiceImpl implements EmployeeServiceIntf {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 
+	/*
+	 *Save Employee 
+	 */
 	@Override
 	public Employee saveEmployee(Employee employee) {
 		Employee emp=new Employee();
@@ -32,6 +35,9 @@ public class EmployeeServiceImpl implements EmployeeServiceIntf {
 	}
 
 		
+	/*
+	 * Delete Employee
+	 */
 	public void deleteById(int empId)throws Exception
 	{
 		Optional <Employee> emp=employeeRepository.findById(empId);
@@ -45,6 +51,9 @@ public class EmployeeServiceImpl implements EmployeeServiceIntf {
 		}
 	}
 
+	/*
+	 * update Employee
+	 */
 	@Override
 	public Employee updateEmployee(int empId,Employee employee) {
 		Employee emp=employeeRepository.findById(empId).get();
@@ -57,6 +66,9 @@ public class EmployeeServiceImpl implements EmployeeServiceIntf {
 		return employeeRepository.save(emp);
 	}
 	
+	/*
+	 * List all Employees
+	 */
 	public List<Employee> getEmployees()
 	{
 		return employeeRepository.sortEmployee();

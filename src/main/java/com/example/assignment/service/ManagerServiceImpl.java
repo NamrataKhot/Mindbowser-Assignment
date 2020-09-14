@@ -14,6 +14,9 @@ public class ManagerServiceImpl implements ManagerServiceIntf{
 	@Autowired
 	 private ManagerRepository managerRepository;
 
+	/*
+	 * API to save Manager
+	 */
 	@Override
 	public Manager saveManager(Manager manager) {
 		Manager managerObj=new Manager();
@@ -29,16 +32,5 @@ public class ManagerServiceImpl implements ManagerServiceIntf{
 		return managerRepository.save(manager);
 	}
 	
-	/*public Manager updateManager(Manager manager)
-	{
-		Manager man=new Manager();
-		man.setFirst_name(manager.getFirst_name());
-		man.setLast_name(manager.getLast_name());
-		man.setAddress(manager.getAddress());
-		man.setDob(manager.getDob());
-		man.setPassword(manager.getPassword());
-		return managerRepository.save(manager);
-		
-	}*/
 	
 }

@@ -20,6 +20,9 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeServiceImpl employeeServiceImpl;
 	
+	/*
+	 * API to save employee
+	 */
 	@PostMapping("/save")
 	public Employee savEmployee(@RequestBody Employee employee)
 	{
@@ -27,6 +30,9 @@ public class EmployeeController {
 		
 	}
 	
+	/*
+	 * API to Update employee by Id
+	 */
 	@PostMapping("/update/{empId}")
 	public Employee updateEmployee(@PathVariable int empId,@RequestBody Employee employee)
 	{		
@@ -34,12 +40,18 @@ public class EmployeeController {
 		
 	}
 	
+	/*
+	 * API to get employee list
+	 */
 	@GetMapping("/employees")
 	public List<Employee> getEmployees(){
 		return employeeServiceImpl.getEmployees();
 		
 	}
 	
+	/*
+	 * API to delete employee
+	 */
 	@DeleteMapping("/delete/{empId}")
 	public void deleteById(@PathVariable int empId)throws Exception
 	{
